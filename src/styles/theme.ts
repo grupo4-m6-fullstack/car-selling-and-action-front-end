@@ -57,4 +57,45 @@ export const theme = extendTheme({
       color: 'grey.800'
     },
   },
+  components: {
+    Button: {
+      defaultProps: {variant: 'primary'},
+      variants: {
+        primary: {
+          bg: 'grey.600',
+          border: '2px solid',
+          borderColor: 'grey.600',
+          color: 'blue',
+          fontSize: '10px',
+          fontWeight: 'bold',
+          _hover: {bg: 'grey.800'},
+          _focus: {borderColor: 'grey.800'},
+          _disabled: {borderColor: 'grey.200'}
+        },
+        outline: {
+          bg: 'transparent',
+          border: '2px solid',
+          borderColor: 'grey.600',
+          color: 'red',
+          fontSize: '10px',
+          fontWeight: 'bold',
+          _hover: {bg: 'grey.800'},
+          _focus: {borderColor: 'grey.800'},
+          _disabled: {borderColor: 'grey.200'}
+        },
+        link: {
+          bg: 'red',
+          border: '2px solid',
+          borderColor: 'grey.600',
+          color: 'yellow',
+          fontSize: '10px',
+          fontWeight: 'bold',
+          _hover: {bg: 'grey.800'},
+          _focus: {borderColor: 'grey.800'},
+          _disabled: {borderColor: 'grey.200'}
+        }
+      }
+    }
+  }
+  
 });
