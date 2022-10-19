@@ -5,7 +5,12 @@ import {
 
 export const theme = extendTheme({
   colors: {
-    brand: {},
+    brand: {
+      100: '#EDEAFD',
+      200: '#B0A6F0',
+      300: '#5126EA',
+      400: '#4529E6',
+    },
     white: '#FFFFFF',
     grey: {
       0: '#FDFDFD',
