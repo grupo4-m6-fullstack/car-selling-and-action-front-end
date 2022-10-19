@@ -50,12 +50,13 @@ interface registerCredential {
   cpf: string;
   phone: string;
   birthdate: string;
+  description?: string;
   cep: string;
   state: string;
   city: string;
   street: string;
   houseNumber: number;
-  houseComplement: string;
+  houseComplement?: string;
   role: string;
   password: string;
 }
