@@ -43,11 +43,9 @@ const Header = () => {
           <MenuItem to='/'>Motos</MenuItem>
           <MenuItem to='/'>Leilão</MenuItem>
           <MenuItem to='/login' isLast>
-            <Button variant={'outline'}
-              size={"sm"}
-              rounded={"md"}
-              color
-            ></Button>
+            <Button variant={"outline2"}>
+              Fazer login
+            </Button>
           </MenuItem>
         </Stack>
       </Box>
