@@ -1,13 +1,13 @@
-import { Flex } from "@chakra-ui/react";
+import { ChakraProps, Flex } from "@chakra-ui/react";
 
-interface INavBar {
+interface INavBarProps extends ChakraProps {
   children: JSX.Element[] | JSX.Element;
 }
 
 const NavBarContainer = ({
   children,
   ...rest
-}: INavBar) => {
+}: INavBarProps) => {
   return (
     <Flex
       as={"nav"}

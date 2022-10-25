@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Flex,
   Stack,
 } from "@chakra-ui/react";
 import { useState } from "react";
@@ -15,12 +16,14 @@ const Header = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <NavBarContainer>
+    <NavBarContainer
+      bgColor={"white"}>
       <Logo></Logo>
       <MenuToggle
         toggle={toggle}
         isOpen={isOpen}></MenuToggle>
       <Box
+        border={"1px dashed black"}
         display={{
           base: isOpen ? "block" : "none",
           md: "block",
@@ -29,15 +32,23 @@ const Header = () => {
           base: "100%",
           md: "auto",
         }}>
-        <Stack
-          spacing={8}
+        <Flex
+          flexDirection={[
+            "column",
+            "column",
+            "row",
+            "row",
+          ]}
+          h={["11rem", "11rem", "4rem", "4rem"]}
+          w={["100%", "100%", "20rem"]}
           align={"center"}
           justify={[
-            "center",
+            "space-between",
+            "space-between",
             "space-between",
             "flex-end",
-            "flex-end",
           ]}
+          border={"1px dashed black"}
           pt={[4, 4, 0, 0]}>
           <MenuItem to='/'>Carros</MenuItem>
           <MenuItem to='/'>Motos</MenuItem>
@@ -47,7 +58,7 @@ const Header = () => {
               Fazer login
             </Button>
           </MenuItem>
-        </Stack>
+        </Flex>
       </Box>
     </NavBarContainer>
   );
