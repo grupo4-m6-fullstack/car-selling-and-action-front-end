@@ -1,7 +1,11 @@
-const Home = () => {
-    return(
-        <div>Home</div>
-    )
-}
+import Footer from "../../components/footer";
 
-export default Home
+const Home = () => {
+  return (
+    <>
+      <div>Home</div>
+    </>
+  );
+};
+
+export default Home;
