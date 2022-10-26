@@ -1,4 +1,9 @@
-import { extendTheme, theme as ChakraTheme } from "@chakra-ui/react";
+
+import {
+  extendTheme,
+  theme as ChakraTheme,
+} from "@chakra-ui/react";
+
 
 export const theme = extendTheme({
   colors: {
@@ -55,8 +60,10 @@ export const theme = extendTheme({
   },
   styles: {
     global: {
-      bg: "white",
-      color: "grey.800",
+      "html, body": {
+        bg: "grey.200",
+        color: "grey.800",
+      },
     },
   },
   components: {
@@ -87,7 +94,10 @@ export const theme = extendTheme({
           fontWeight: "600",
           _hover: { bg: "grey.500" },
           _focus: { bg: "grey.500" },
-          _disabled: { bg: "grey.500", color: "white" },
+          _disabled: {
+            bg: "grey.500",
+            color: "white",
+          },
         },
         brand: {
           bg: "brand.400",
@@ -100,7 +110,10 @@ export const theme = extendTheme({
           fontWeight: "600",
           _hover: { bg: "brand.300" },
           _focus: { bg: "grey.500" },
-          _disabled: { bg: "brand.200", color: "brand.100" },
+          _disabled: {
+            bg: "brand.200",
+            color: "brand.100",
+          },
         },
         brandOpacity: {
           bg: "brand.100",
