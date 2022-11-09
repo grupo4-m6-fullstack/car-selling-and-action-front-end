@@ -1,6 +1,6 @@
 import { Avatar, Flex, Heading, Image, Text, Button } from "@chakra-ui/react";
 
-interface AnnounceProps {
+export interface AnnounceProps {
   title: string;
   year: number;
   km: number;
@@ -8,17 +8,18 @@ interface AnnounceProps {
   description: string;
   cover_image: string;
   isActive: boolean;
+  type: string;
   user: UserProps;
 }
 interface UserProps {
   name: string;
 }
 
-interface AnnouceProp {
+interface AnnounceProp {
   announce: AnnounceProps;
 }
 
-const Card = ({ announce }: AnnouceProp) => {
+const Card = ({ announce }: AnnounceProp) => {
   const value = new Intl.NumberFormat("pt-br", {
     style: "currency",
     currency: "BRL",
@@ -33,47 +34,71 @@ const Card = ({ announce }: AnnouceProp) => {
       justifyContent={"center"}
       flexDirection={"column"}
       w={"312px"}
+      minW={"312px"}
       as="li"
     >
-      {userOwner && (
-        <Flex
-          position={"absolute"}
-          bg={announce.isActive ? "brand.400" : "grey.600"}
-          top="11px"
-          left="16px"
-          padding={"0px 8px 0px 8px"}
-          justifyContent={"center"}
-        >
-          {announce.isActive ? (
-            <Text fontSize={"14px"} color={"white"} fontWeight={"semibold"}>
-              Ativo
-            </Text>
-          ) : (
-            <Text fontSize={"14px"} color={"white"} fontWeight={"semibold"}>
-              Inativo
-            </Text>
-          )}
-        </Flex>
-      )}
       <Flex
-        as="figure"
         w={"100%"}
         height={"152px"}
-        bg={"grey.300"}
-        alignItems={"center"}
-        justifyContent={"center"}
         marginBottom={"16px"}
         overflow={"hidden"}
+        _hover={{
+          border: "2px solid",
+          borderColor: "brand.400",
+        }}
       >
-        <Image
-          src={announce.cover_image}
-          w={"auto"}
-          h={"auto"}
-          maxHeight={"152px"}
-          maxWidth={"100%"}
-          _hover={{ transform: "scale(1.2)" }}
+        {userOwner && (
+          <Flex
+            position={"absolute"}
+            w={"100%"}
+            height={"152px"}
+            bg={"transparent"}
+            _hover={{ display: "none" }}
+            transition="1s"
+          >
+            <Flex
+              position={"absolute"}
+              bg={announce.isActive ? "brand.400" : "grey.600"}
+              top="11px"
+              left="16px"
+              padding={"0px 8px 0px 8px"}
+              justifyContent={"center"}
+              transition="1s"
+            >
+              {announce.isActive ? (
+                <Text fontSize={"14px"} color={"white"} fontWeight={"semibold"}>
+                  Ativo
+                </Text>
+              ) : (
+                <Text fontSize={"14px"} color={"white"} fontWeight={"semibold"}>
+                  Inativo
+                </Text>
+              )}
+            </Flex>
+          </Flex>
+        )}
+        <Flex
+          as="figure"
+          w={"100%"}
+          height={"152px"}
+          bg={"grey.300"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          _hover={{
+            transform: "scale(1.2)",
+            border: "2px solid",
+            borderColor: "purple",
+          }}
           transition="1s"
-        />
+        >
+          <Image
+            src={announce.cover_image}
+            w={"auto"}
+            h={"auto"}
+            maxHeight={"152px"}
+            maxWidth={"100%"}
+          />
+        </Flex>
       </Flex>
       <Flex w={"100%"} marginBottom={"16px"}>
         <Heading
